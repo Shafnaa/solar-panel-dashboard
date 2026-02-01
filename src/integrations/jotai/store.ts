@@ -33,11 +33,11 @@ export const powerFlowEdgesAtom = atom((get) => {
     { id: "e3-4", show: p2_6 > p1, val: p2_6 - p1 },
     { id: "e4-3", show: p2_6 < p1, val: p1 - p2_6 },
     // Direct server mappings
-    { id: "e4-5", show: (powerMap[2] || 0) > 0, val: powerMap[2] || 0 },
-    { id: "e4-6", show: (powerMap[3] || 0) > 0, val: powerMap[3] || 0 },
-    { id: "e4-7", show: (powerMap[4] || 0) > 0, val: powerMap[4] || 0 },
-    { id: "e4-8", show: (powerMap[5] || 0) > 0, val: powerMap[5] || 0 },
-    { id: "e4-9", show: (powerMap[6] || 0) > 0, val: powerMap[6] || 0 },
+    { id: "e4-5", show: (powerMap[2] || 0) > 0, val: powerMap[4] || 0 },
+    { id: "e4-6", show: (powerMap[3] || 0) > 0, val: powerMap[5] || 0 },
+    { id: "e4-7", show: (powerMap[4] || 0) > 0, val: powerMap[6] || 0 },
+    { id: "e4-8", show: (powerMap[5] || 0) > 0, val: powerMap[7] || 0 },
+    { id: "e4-9", show: (powerMap[6] || 0) > 0, val: powerMap[8] || 0 },
   ];
 
   return rules;
