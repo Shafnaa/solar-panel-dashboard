@@ -19,12 +19,12 @@ export const powerFlowEdgesAtom = atom((get) => {
   });
 
   // 2. Aggregate power for IDs 2 through 6 as requested
-  const p2_6 = [2, 3, 4, 5, 6].reduce(
+  const p2_6 = [4, 5, 6, 7, 8].reduce(
     (sum, id) => sum + (powerMap[id] || 0),
     0,
   );
-  const p1 = powerMap[1] || 0;
-  const p7 = powerMap[7] || 0;
+  const p1 = powerMap[2] || 0;
+  const p7 = powerMap[3] || 0;
 
   // 3. Define the visibility and value rules
   const rules = [
