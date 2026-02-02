@@ -73,7 +73,7 @@ const initialNodes: Node[] = [
   {
     id: "5",
     type: "powerNode",
-    data: { label: "Server 1", icon: <ServerIcon className="size-4" /> },
+    data: { label: "PABX", icon: <ServerIcon className="size-4" /> },
     position: { x: 200, y: -150 },
     sourcePosition: Position.Left,
     targetPosition: Position.Left,
@@ -81,7 +81,7 @@ const initialNodes: Node[] = [
   {
     id: "6",
     type: "powerNode",
-    data: { label: "Server 2", icon: <ServerIcon className="size-4" /> },
+    data: { label: "Lt. 2", icon: <ServerIcon className="size-4" /> },
     position: { x: 200, y: -75 },
     sourcePosition: Position.Left,
     targetPosition: Position.Left,
@@ -89,7 +89,7 @@ const initialNodes: Node[] = [
   {
     id: "7",
     type: "powerNode",
-    data: { label: "Server 3", icon: <ServerIcon className="size-4" /> },
+    data: { label: "Arsip", icon: <ServerIcon className="size-4" /> },
     position: { x: 200, y: 0 },
     sourcePosition: Position.Left,
     targetPosition: Position.Left,
@@ -97,7 +97,7 @@ const initialNodes: Node[] = [
   {
     id: "8",
     type: "powerNode",
-    data: { label: "Server 4", icon: <ServerIcon className="size-4" /> },
+    data: { label: "K3", icon: <ServerIcon className="size-4" /> },
     position: { x: 200, y: 75 },
     sourcePosition: Position.Left,
     targetPosition: Position.Left,
@@ -105,7 +105,7 @@ const initialNodes: Node[] = [
   {
     id: "9",
     type: "powerNode",
-    data: { label: "Server 5", icon: <ServerIcon className="size-4" /> },
+    data: { label: "SDM", icon: <ServerIcon className="size-4" /> },
     position: { x: 200, y: 150 },
     sourcePosition: Position.Left,
     targetPosition: Position.Left,
