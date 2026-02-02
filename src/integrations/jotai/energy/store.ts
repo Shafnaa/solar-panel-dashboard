@@ -32,6 +32,7 @@ export const energyChartDataAtom = atom((get) => {
   if (!pzemDevice) return history;
 
   const liveData = pzemDevice.data as PZEMData;
+  
   const newPoint = {
     time: new Date(live!.ts * 1000).toLocaleTimeString([], {
       hour: "2-digit",
