@@ -91,16 +91,16 @@ export function MetersTable() {
                         {meter.id}
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.voltage.toFixed(1)} V
+                        {data?.voltage.toFixed(1)} V
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.current.toFixed(2)} A
+                        {data?.current.toFixed(2)} A
                       </td>
                       <td className="py-3 text-right font-mono text-accent">
-                        {data.power.toFixed(1)} W
+                        {data?.power.toFixed(1)} W
                       </td>
                       <td className="py-3 text-right font-mono text-primary">
-                        {data.energy.toFixed(2)} Wh
+                        {data?.energy.toFixed(2)} Wh
                       </td>
                     </tr>
                   );
@@ -137,19 +137,19 @@ export function MetersTable() {
                         {meter.id}
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.voltage.toFixed(1)} V
+                        {data?.voltage.toFixed(1)} V
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.current.toFixed(2)} A
+                        {data?.current.toFixed(2)} A
                       </td>
                       <td className="py-3 text-right font-mono text-primary">
-                        {data.power.toFixed(1)} W
+                        {data?.power.toFixed(1)} W
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.frequency.toFixed(2)} Hz
+                        {data?.frequency.toFixed(2)} Hz
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data.power_factor.toFixed(2)}
+                        {data?.power_factor.toFixed(2)}
                       </td>
                     </tr>
                   );
