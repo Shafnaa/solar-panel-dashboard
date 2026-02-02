@@ -34,7 +34,7 @@ export interface SensorEntry {
   id: number;
   type: DeviceType;
   // Use a Discriminated Union for better type safety
-  data: DDSUData | PZEMData | SHTData | BMSData;
+  data: DDSUData | PZEMData | SHTData | BMSData | {};
 }
 
 export interface WSMessage {
