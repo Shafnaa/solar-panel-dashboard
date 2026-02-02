@@ -1,9 +1,13 @@
 import { useAtomValue } from "jotai";
 import { ZapIcon, LeafyGreenIcon, BatteryFullIcon } from "lucide-react";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
-import { useHistoricalYield } from "@/hooks/useHistoricalYield";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import type { BMSData, SensorEntry } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
+import { useHistoricalYield } from "@/hooks/useHistoricalYield";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function SystemOverview() {
   // Battery remains real-time from the WebSocket atom

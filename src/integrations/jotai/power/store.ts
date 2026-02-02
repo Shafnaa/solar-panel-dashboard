@@ -1,7 +1,8 @@
-// store.ts
 import { atom } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
 import type { DDSUData, PZEMData } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
 
 // Helper to generate dummy power history (20 points)
 const generatePowerHistory = () => {

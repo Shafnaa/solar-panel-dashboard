@@ -1,10 +1,14 @@
 // useSensorWebSocket.ts
 import { useEffect } from "react";
 import { useSetAtom } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
 import type { WSMessage } from "@/types";
 
-export const useSensorWebSocket = (url: string = "ws://0.0.0.0:8765") => {
+import { BASE_WS_URL } from "@/lib/constants";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
+export const useSensorWebSocket = (url: string = BASE_WS_URL) => {
   const setSensorData = useSetAtom(latestSensorDataAtom);
 
   useEffect(() => {

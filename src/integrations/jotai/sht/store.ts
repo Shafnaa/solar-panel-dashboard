@@ -1,8 +1,8 @@
-// store.ts
 import { atom } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store"; //
-import type { SHTData } from "@/types"; //
-//
+
+import type { SHTData } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
 
 // Create some dummy historical data
 const generateDummyHistory = () => {

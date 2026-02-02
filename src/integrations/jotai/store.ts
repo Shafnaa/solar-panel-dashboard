@@ -1,5 +1,5 @@
-// store.ts
 import { atom } from "jotai";
+
 import type { WSMessage } from "@/types";
 
 // Initialize with null or a default structure
@@ -18,20 +18,20 @@ export const powerFlowEdgesAtom = atom((get) => {
     }
   });
 
-  // 2. Aggregate power for IDs 2 through 6 as requested
-  const p2_6 = [4, 5, 6, 7, 8].reduce(
+  // 2. Aggregate power for IDs 4 through 8 as requested
+  const p4_8 = [4, 5, 6, 7, 8].reduce(
     (sum, id) => sum + (powerMap[id] || 0),
     0,
   );
-  const p1 = powerMap[2] || 0;
-  const p7 = powerMap[3] || 0;
+  const p2 = powerMap[2] || 0;
+  const p3 = powerMap[3] || 0;
 
   // 3. Define the visibility and value rules
   const rules = [
-    { id: "e1-4", show: p1 > p7, val: p1 - p7 },
-    { id: "e2-4", show: p7 > 0, val: p7 },
-    { id: "e3-4", show: p2_6 > p1, val: p2_6 - p1 },
-    { id: "e4-3", show: p2_6 < p1, val: p1 - p2_6 },
+    { id: "e1-4", show: p2 > p3, val: p2 - p3 },
+    { id: "e2-4", show: p3 > 0, val: p3 },
+    { id: "e3-4", show: p4_8 > p2, val: p4_8 - p2 },
+    { id: "e4-3", show: p4_8 < p2, val: p2 - p4_8 },
     // Direct server mappings
     { id: "e4-5", show: (powerMap[4] || 0) > 0, val: powerMap[4] || 0 },
     { id: "e4-6", show: (powerMap[5] || 0) > 0, val: powerMap[5] || 0 },

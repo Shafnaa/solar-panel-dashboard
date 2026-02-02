@@ -1,7 +1,6 @@
+import { useMemo } from "react";
 import { useAtomValue } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
-import type { SHTData } from "@/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import {
   Line,
   LineChart,
@@ -13,8 +12,13 @@ import {
   Legend,
 } from "recharts";
 import { Thermometer, Droplets } from "lucide-react";
+
+import type { SHTData } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
 import { useSHTHistory } from "@/integrations/tanstack-query/hooks/useSensorQuery";
-import { useMemo } from "react";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function EnvironmentalChart() {
   // Subscribe to live and chart data

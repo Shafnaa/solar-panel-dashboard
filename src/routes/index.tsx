@@ -1,12 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { useSensorWebSocket } from "@/lib/hooks/useSensorWebSocket";
+
 import { PowerChart } from "@/components/power-chart";
 import { EnergyChart } from "@/components/energy-chart";
+import { MetersTable } from "@/components/meters-table";
 import { SystemOverview } from "@/components/system-overview";
 import { PowerFlowDiagram } from "@/components/power-flow-diagram";
 import { EnvironmentalChart } from "@/components/environmental-chart";
-import { MetersTable } from "@/components/meters-table";
-import { useSensorWebSocket } from "@/lib/hooks/useSensorWebSocket";
 
 export const Route = createFileRoute("/")({
   component: App,

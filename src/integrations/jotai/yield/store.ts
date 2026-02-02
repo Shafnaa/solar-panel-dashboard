@@ -1,7 +1,8 @@
-// store.ts
 import { atom } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
 import type { PZEMData } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
 
 // 1. Yield Today: We'll simulate this based on the live Energy reading
 export const yieldTodayAtom = atom((get) => {

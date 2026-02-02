@@ -1,8 +1,8 @@
-// store.ts
 import { atom } from "jotai";
+
+import type { PZEMData } from "@/types";
+
 import { latestSensorDataAtom } from "@/integrations/jotai/store";
-import type { PZEMData } from "@/types"; //
-//
 
 // Helper to generate 10 hours of dummy energy data (increasing)
 const generateEnergyHistory = () => {

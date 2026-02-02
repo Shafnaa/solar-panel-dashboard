@@ -1,9 +1,11 @@
 import { useAtomValue } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store"; // Adjust path as needed
-import type { DDSUData, PZEMData, SensorEntry } from "@/types"; // Adjust path as needed
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { ZapIcon } from "lucide-react";
-// Adjust path as needed
+
+import type { DDSUData, PZEMData, SensorEntry } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function MetersTable() {
   const sensorData = useAtomValue(latestSensorDataAtom);

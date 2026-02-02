@@ -1,9 +1,6 @@
 import { useMemo } from "react";
 import { useAtomValue } from "jotai";
-import { latestSensorDataAtom } from "@/integrations/jotai/store";
-import { usePZEMHistory } from "@/integrations/tanstack-query/hooks/useSensorQuery";
-import type { PZEMData } from "@/types";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 import {
   Area,
   AreaChart,
@@ -13,6 +10,13 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+
+import type { PZEMData } from "@/types";
+
+import { latestSensorDataAtom } from "@/integrations/jotai/store";
+import { usePZEMHistory } from "@/integrations/tanstack-query/hooks/useSensorQuery";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function EnergyChart() {
   // 1. Fetch historical data via TanStack Query

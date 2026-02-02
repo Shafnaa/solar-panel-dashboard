@@ -1,5 +1,3 @@
-// types.ts
-
 export type DeviceType = "DDSU" | "PZEM" | "SHT" | "BMS";
 
 export interface DDSUData {
