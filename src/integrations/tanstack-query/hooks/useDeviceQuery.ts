@@ -3,8 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 
 import { BASE_API_URL, SENSOR_AGGREGATION_INTERVAL_MS } from "@/lib/constants";
 
-const STALE_TIME = SENSOR_AGGREGATION_INTERVAL_MS; // 1 hour invalidation
-
 export const useDeviceQuery = (id: string) => {
   return useQuery({
     queryKey: ["device", id],
@@ -12,7 +10,7 @@ export const useDeviceQuery = (id: string) => {
       const { data } = await axios.get(`${BASE_API_URL}/devices/id/${id}`);
       return data;
     },
-    staleTime: STALE_TIME,
+    refetchInterval: SENSOR_AGGREGATION_INTERVAL_MS,
   });
 };
 
@@ -23,6 +21,6 @@ export const useDevicesQuery = () => {
       const { data } = await axios.get(`${BASE_API_URL}/devices/`);
       return data;
     },
-    staleTime: STALE_TIME,
+    refetchInterval: SENSOR_AGGREGATION_INTERVAL_MS,
   });
 };
