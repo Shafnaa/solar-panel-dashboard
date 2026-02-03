@@ -27,51 +27,50 @@ def upgrade() -> None:
         sa.column("id", sa.INTEGER()),
         sa.column("name", sa.TEXT()),
         sa.column("description", sa.TEXT()),
-        sa.column("created_at", sa.BIGINT()),
     )
 
     op.bulk_insert(
         device_table,
         [  # DDSU Meters (IDs 2, 4-8)
             {
-                "id": "2",
+                "id": 2,
                 "name": "Grid Meter",
                 "description": "Main Utility Grid Connection (DDSU666)",
             },
             {
-                "id": "4",
+                "id": 4,
                 "name": "PABX",
                 "description": "Power monitoring for Server Cluster 1",
             },
             {
-                "id": "5",
+                "id": 5,
                 "name": "Lt. 2",
                 "description": "Power monitoring for Server Cluster 2",
             },
             {
-                "id": "6",
+                "id": 6,
                 "name": "Arsip",
                 "description": "Power monitoring for Server Cluster 3",
             },
             {
-                "id": "7",
+                "id": 7,
                 "name": "K3",
                 "description": "Power monitoring for Server Cluster 4",
             },
             {
-                "id": "8",
+                "id": 8,
                 "name": "SDM",
                 "description": "Power monitoring for Server Cluster 5",
             },
             # PZEM Meter (ID 3)
             {
-                "id": "3",
+                "id": 3,
                 "name": "PV",
                 "description": "Solar Panel DC/AC Generation Output",
             },
             # SHT Sensor (ID 1)
             {
-                "id": "1",
+                "id": 1,
                 "name": "Server Room",
                 "description": "Ambient Temperature and Humidity Sensor",
             },

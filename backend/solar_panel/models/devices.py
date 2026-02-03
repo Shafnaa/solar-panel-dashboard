@@ -22,8 +22,6 @@ class Device(Base):
     name = Column(Text)
     description = Column(Text)
 
-    created_at = Column(BigInteger)
-
 
 class DeviceModel(BaseModel):
     model_config = ConfigDict(from_attributes=True)
@@ -31,8 +29,6 @@ class DeviceModel(BaseModel):
 
     name: str
     description: str
-
-    created_at: int
 
 
 ####################
@@ -44,7 +40,6 @@ class DeviceResponse(BaseModel):
     id: int
     name: str
     description: str
-    created_at: int  # timestamp in epoch
 
 
 class DeviceForm(BaseModel):
@@ -65,7 +60,6 @@ class DeviceTable:
             device = DeviceModel(
                 **{
                     **form_data.model_dump(exclude_none=True),
-                    "created_at": int(time.time()),
                 }
             )
 
@@ -85,8 +79,7 @@ class DeviceTable:
     def get_devices(self):
         with get_db() as db:
             return [
-                DeviceModel.model_validate(device)
-                for device in db.query(Device).order_by(Device.created_at.desc()).all()
+                DeviceModel.model_validate(device) for device in db.query(Device).all()
             ]
 
     def get_device_by_id(self, id: int) -> Optional[DeviceModel]:

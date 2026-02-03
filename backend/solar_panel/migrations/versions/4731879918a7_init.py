@@ -6,6 +6,7 @@ Create Date: 2026-01-28 21:24:34.215130
 
 """
 
+import time
 from typing import Sequence, Union
 
 from alembic import op
@@ -31,7 +32,6 @@ def upgrade() -> None:
             sa.Column("id", sa.INTEGER(), nullable=False),
             sa.Column("name", sa.TEXT(), nullable=False),
             sa.Column("description", sa.TEXT(), nullable=True),
-            sa.Column("created_at", sa.BIGINT(), nullable=True),
             sa.PrimaryKeyConstraint("id"),
         )
 
