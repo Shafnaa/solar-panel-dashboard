@@ -40,39 +40,39 @@ def upgrade() -> None:
             },
             {
                 "id": "4",
-                "name": "Server Rack 1",
+                "name": "PABX",
                 "description": "Power monitoring for Server Cluster 1",
             },
             {
                 "id": "5",
-                "name": "Server Rack 2",
+                "name": "Lt. 2",
                 "description": "Power monitoring for Server Cluster 2",
             },
             {
                 "id": "6",
-                "name": "Server Rack 3",
+                "name": "Arsip",
                 "description": "Power monitoring for Server Cluster 3",
             },
             {
                 "id": "7",
-                "name": "Server Rack 4",
+                "name": "K3",
                 "description": "Power monitoring for Server Cluster 4",
             },
             {
                 "id": "8",
-                "name": "Server Rack 5",
+                "name": "SDM",
                 "description": "Power monitoring for Server Cluster 5",
             },
             # PZEM Meter (ID 3)
             {
                 "id": "3",
-                "name": "PV Generation",
+                "name": "PV",
                 "description": "Solar Panel DC/AC Generation Output",
             },
             # SHT Sensor (ID 1)
             {
                 "id": "1",
-                "name": "Server Room SHT",
+                "name": "Server Room",
                 "description": "Ambient Temperature and Humidity Sensor",
             },
         ],

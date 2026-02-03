@@ -1,36 +1,27 @@
+import React from "react";
 import { useAtomValue } from "jotai";
+
 import { ZapIcon } from "lucide-react";
 
 import type { DDSUData, PZEMData, SensorEntry } from "@/types";
 
 import { latestSensorDataAtom } from "@/integrations/jotai/store";
+import { useDevicesQuery } from "@/integrations/tanstack-query/hooks/useDeviceQuery";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function MetersTable() {
   const sensorData = useAtomValue(latestSensorDataAtom);
+  const { data: devices, isLoading: devicesLoading } = useDevicesQuery();
 
-  // If no data yet, show a loading state
-  if (!sensorData) {
-    return (
-      <Card className="border-border/50 bg-card">
-        <CardHeader className="flex flex-row items-center gap-2">
-          <div className="rounded-md bg-primary/10 p-2">
-            <ZapIcon className="h-4 w-4 text-primary" />
-          </div>
-          <CardTitle className="text-sm font-medium">Realtime Data</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="p-4 text-muted-foreground">
-            Loading sensor data...
-          </div>
-        </CardContent>
-      </Card>
-    );
-  }
+  // 1. Create a lookup object for O(1) access: { "id_123": "Main Transformer" }
+  const deviceMap = React.useMemo(() => {
+    if (!devices) return {};
+    return Object.fromEntries(devices.map((d: any) => [d.id, d.name]));
+  }, [devices]);
 
-  // If data is empty, show a connecting state
-  if (sensorData.data.length === 0) {
+  // Loading state
+  if (!sensorData || devicesLoading) {
     return (
       <Card className="border-border/50 bg-card">
         <CardHeader className="flex flex-row items-center gap-2">
@@ -46,7 +37,6 @@ export function MetersTable() {
     );
   }
 
-  // Filter devices by type based on the backend payload structure
   const pzemMeters = sensorData.data.filter(
     (d: { type: string }) => d.type === "PZEM",
   );
@@ -88,7 +78,7 @@ export function MetersTable() {
                       className="border-b border-border/30 last:border-0"
                     >
                       <td className="py-3 font-mono text-xs text-muted-foreground">
-                        {meter.id}
+                        {deviceMap[meter.id] || meter.id}
                       </td>
                       <td className="py-3 text-right font-mono">
                         {data?.voltage.toFixed(1)} V
@@ -134,7 +124,7 @@ export function MetersTable() {
                       className="border-b border-border/30 last:border-0"
                     >
                       <td className="py-3 font-mono text-xs text-muted-foreground">
-                        {meter.id}
+                        {deviceMap[meter.id] || meter.id}
                       </td>
                       <td className="py-3 text-right font-mono">
                         {data?.voltage.toFixed(1)} V
