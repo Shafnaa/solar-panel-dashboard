@@ -136,7 +136,6 @@ export function MetersTable() {
                       <td className="py-3 text-right font-mono">
                         {formatPower(data?.power)}
                       </td>
-                      x
                       <td className="py-3 text-right font-mono">
                         {data?.frequency.toFixed(2)} Hz
                       </td>
