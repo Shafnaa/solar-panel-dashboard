@@ -9,6 +9,7 @@ import { latestSensorDataAtom } from "@/integrations/jotai/store";
 import { useDevicesQuery } from "@/integrations/tanstack-query/hooks/useDeviceQuery";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatEnergy, formatPower } from "@/lib/utils";
 
 export function MetersTable() {
   const sensorData = useAtomValue(latestSensorDataAtom);
@@ -87,10 +88,10 @@ export function MetersTable() {
                         {data?.current.toFixed(2)} A
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data?.power.toFixed(1)} W
+                        {formatPower(data?.power)}
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data?.energy.toFixed(2)} Wh
+                        {formatEnergy(data?.energy)}
                       </td>
                     </tr>
                   );
@@ -133,8 +134,9 @@ export function MetersTable() {
                         {data?.current.toFixed(2)} A
                       </td>
                       <td className="py-3 text-right font-mono">
-                        {data?.power.toFixed(1)} W
+                        {formatPower(data?.power)}
                       </td>
+                      x
                       <td className="py-3 text-right font-mono">
                         {data?.frequency.toFixed(2)} Hz
                       </td>
