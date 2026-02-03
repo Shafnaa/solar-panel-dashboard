@@ -86,10 +86,10 @@ export function MetersTable() {
                       <td className="py-3 text-right font-mono">
                         {data?.current.toFixed(2)} A
                       </td>
-                      <td className="py-3 text-right font-mono text-accent">
+                      <td className="py-3 text-right font-mono">
                         {data?.power.toFixed(1)} W
                       </td>
-                      <td className="py-3 text-right font-mono text-primary">
+                      <td className="py-3 text-right font-mono">
                         {data?.energy.toFixed(2)} Wh
                       </td>
                     </tr>
@@ -132,7 +132,7 @@ export function MetersTable() {
                       <td className="py-3 text-right font-mono">
                         {data?.current.toFixed(2)} A
                       </td>
-                      <td className="py-3 text-right font-mono text-primary">
+                      <td className="py-3 text-right font-mono">
                         {data?.power.toFixed(1)} W
                       </td>
                       <td className="py-3 text-right font-mono">
